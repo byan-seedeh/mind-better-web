@@ -21,11 +21,10 @@ export default function HomePage() {
     );
   }
 
-  const userLabel = authenticated?.email || "Bae";
+  const userLabel = authenticated?.username || "Bae";
 
   return (
     <div className="min-h-screen w-full bg-[#F9F9F9]">
-      {/* Top Bar + Nav */}
       <header className="sticky top-0 z-10 w-full bg-white/90 backdrop-blur border-b">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
           <div className="text-xl md:text-2xl font-bold text-[#432C81]">
@@ -66,7 +65,6 @@ export default function HomePage() {
       <section className="bg-[#D0F8FF]">
         <div className="mx-auto max-w-6xl px-6 py-10 sm:py-12">
           <div className="rounded-2xl bg-white/60 p-6 sm:p-10 text-center shadow-sm">
-            {/* แทนข้อความด้วยรูปภาพ */}
             <div className="flex justify-center">
               <Image
                 src="/assets/banner.png"
@@ -87,7 +85,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 3 Benefit Cars */}
       <section className="mx-auto grid max-w-6xl grid-cols-1 gap-4 px-6 py-8 sm:grid-cols-3">
         <div className="rounded-2xl bg-[#E6F7FF] p-6 text-center shadow-sm">
           <div className="mx-auto mb-3 h-16 w-16">
