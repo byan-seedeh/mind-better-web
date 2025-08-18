@@ -7,7 +7,7 @@ export default function Dashboard() {
   const router = useRouter();
   const { isLoading, authenticated } = useAuthen();
 
-  if (isLoading) {
+  if (isLoading) {  
     return <div className='flex flex-col justify-center items-center w-full text-center min-h-screen bg-[#D0F8FF]'>Loading...</div>;
   }
 

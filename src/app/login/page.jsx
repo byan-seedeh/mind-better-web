@@ -24,11 +24,10 @@ export default function Home() {
 
   const handleSubmit = async (values) => {
     const response = await login(values.email, values.password);
-    console.log(response);
 
     if (response.result) {
       localStorage.setItem('user', JSON.stringify(response.data));
-      router.push('/dashboard');
+      router.push('/home');
     } else {
       showErrorDialog(response.message);
     }
