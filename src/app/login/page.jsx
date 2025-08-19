@@ -26,8 +26,17 @@ export default function Home() {
     const response = await login(values.email, values.password);
 
     if (response.result) {
+      // เก็บข้อมูล user ลง localStorage
       localStorage.setItem('user', JSON.stringify(response.data));
-      router.push('/home');
+      
+      // เช็ค role จาก email
+      if (values.email === 'admin@test.com') {
+        // ถ้าเป็น admin redirect ไปหน้า admin
+        router.push('/admin');
+      } else {
+        // ถ้าเป็น user ธรรมดา redirect ไปหน้า home
+        router.push('/home');
+      }
     } else {
       showErrorDialog(response.message);
     }
@@ -55,20 +64,34 @@ export default function Home() {
         {({ isSubmitting }) => (
           <Form>
             <div>
-              <Field className='w-[300px] rounded-[8px] p-[10px] bg-white text-black' name="email" type="email" />
+              <Field 
+                className='w-[300px] rounded-[8px] p-[10px] bg-white text-black' 
+                name="email" 
+                type="email" 
+                placeholder="Enter your email"
+              />
               <ErrorMessage className='text-red-500 text-left text-sm' name="email" component="div" />
             </div>
             <div className='h-[10px]' />
             <div>
-              <Field className='w-[300px] rounded-[8px] p-[10px] bg-white text-black' name="password" type={showPassword ? 'text' : 'password'} />
+              <Field 
+                className='w-[300px] rounded-[8px] p-[10px] bg-white text-black' 
+                name="password" 
+                type={showPassword ? 'text' : 'password'} 
+                placeholder="Enter your password"
+              />
               {/* <button type="button" onClick={handleTogglePasswordVisibility} className='absolute right-0 top-0'>
                 {showPassword ? 'Hide' : 'Show'}
               </button> */}
               <ErrorMessage className='text-red-500 text-left text-sm' name="password" component="div" />
             </div>
             <div className='h-[10px]' />
-            <button type="submit" className='bg-white text-black py-[10px] w-[300px] rounded-[8px]' disabled={isSubmitting}>
-              Login
+            <button 
+              type="submit" 
+              className='bg-white text-black py-[10px] w-[300px] rounded-[8px] hover:bg-gray-100 transition-colors' 
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? 'Logging in...' : 'Login'}
             </button>
           </Form>
         )}
