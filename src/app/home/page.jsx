@@ -61,7 +61,6 @@ export default function HomePage() {
         </div>
       </header>
 
-      {/* Hero Banner */}
       <section className="bg-[#D0F8FF]">
         <div className="mx-auto max-w-6xl px-6 py-10 sm:py-12">
           <div className="rounded-2xl bg-white/60 p-6 sm:p-10 text-center shadow-sm">

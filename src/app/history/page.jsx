@@ -66,7 +66,6 @@ export default function HistoryPage() {
     const avg = +(sum / count).toFixed(1);
     const last = items[0] || null;
     
-    // คำนวณแนวโน้ม (เปรียบเทียบ 2 ครั้งล่าสุด)
     let trend = null;
     if (count >= 2) {
       const lastScore = Number(items[0].total_score) || 0;
@@ -95,7 +94,6 @@ export default function HistoryPage() {
     return "#ef4444"; // red
   };
 
-  // Custom Tooltip สำหรับกราฟ
   const CustomTooltip = ({ active, payload, label }) => {
     if (active && payload && payload.length) {
       const data = payload[0].payload;
@@ -145,7 +143,7 @@ export default function HistoryPage() {
           </div>
         </div>
 
-        {/* Summary */}
+        {/* Summary แต่ละ card */}
         <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-4">
           <div className="rounded-xl bg-[#E6F7FF] p-4">
             <div className="text-sm text-[#432C81]/70">จำนวนครั้งทั้งหมด</div>

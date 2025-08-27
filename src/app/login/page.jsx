@@ -29,12 +29,10 @@ export default function Home() {
       // เก็บข้อมูล user ลง localStorage
       localStorage.setItem('user', JSON.stringify(response.data));
       
-      // เช็ค role จาก email
       if (values.email === 'admin@test.com') {
-        // ถ้าเป็น admin redirect ไปหน้า admin
         router.push('/admin');
       } else {
-        // ถ้าเป็น user ธรรมดา redirect ไปหน้า home
+        
         router.push('/home');
       }
     } else {

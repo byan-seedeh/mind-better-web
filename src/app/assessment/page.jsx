@@ -61,7 +61,6 @@ export default function AssessmentPage() {
   const [showResult, setShowResult] = useState(false); // ✅ โหมดสรุปผล
   const [saving, setSaving] = useState(false);
 
-  // โหลดคำตอบเดิมกันรีเฟรชแล้วหาย
   useEffect(() => {
     try {
       const raw = localStorage.getItem(LS_KEY);
@@ -212,7 +211,7 @@ export default function AssessmentPage() {
                 {c.label} ({c.value})
               </button>
             );
-          })}
+          })}      
         </div>
 
         <div className="mt-8 flex items-center justify-between gap-3">

@@ -44,7 +44,7 @@ export default function AdminPage() {
       return;
     }
     
-    // ตรวจสอบว่าเป็น admin หรือไม่
+    // Admin ถ้าไม่ใช่ก็กลับหน้า homeเลย
     if (authenticated && authenticated.email !== "admin@test.com") {
       router.replace("/home");
       return;
@@ -78,8 +78,7 @@ export default function AdminPage() {
     }
   };
 
-  // จัดการคำถาม
-  const handleEditQuestion = (index) => {
+  const handleEditQuestion = (index) => { 
     setEditingIndex(index);
     setEditingText(questions[index]);
   };
@@ -111,7 +110,6 @@ export default function AdminPage() {
     }
   };
 
-  // จัดการตัวเลือก
   const handleEditChoice = (index) => {
     setEditingIndex(index);
     setEditingText(choices[index].label);
