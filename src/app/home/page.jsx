@@ -84,28 +84,38 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-6xl grid-cols-1 gap-4 px-6 py-8 sm:grid-cols-3">
-        <div className="rounded-2xl bg-[#E6F7FF] p-6 text-center shadow-sm">
-          <div className="mx-auto mb-3 h-16 w-16">
-            <img src="/assets/1.png" alt="เข้าใจสุขภาพจิต" className="h-full w-full object-contain" />
-          </div>
-          <p className="font-bold text-pink-500">เข้าใจสุขภาพจิตตัวเอง</p>
-        </div>
+      {/* 
+       */}
+    
+    <section className="mx-auto grid max-w-6xl grid-cols-1 gap-4 px-6 py-8 sm:grid-cols-3">
+  <div className="rounded-2xl bg-[#E6F7FF] p-6 text-center shadow-sm hover:shadow-md transition-shadow cursor-pointer"
+       onClick={() => window.location.href = '/assessment?type=2Q'}>
+    <div className="mx-auto mb-3 h-16 w-16">
+      <img src="/assets/1.png" alt="แบบประเมิน 2Q" className="h-full w-full object-contain" />
+    </div>
+    <p className="font-bold text-pink-500 mb-2">แบบประเมิน 2Q</p>
+    <p className="text-sm text-gray-600">แบบคัดกรองโรคซึมเศร้า 2 คำถาม</p>
+  </div>
 
-        <div className="rounded-2xl bg-[#FFF0F0] p-6 text-center shadow-sm">
-          <div className="mx-auto mb-3 h-16 w-16">
-            <img src="/assets/2.png" alt="ลดความเสี่ยง" className="h-full w-full object-contain" />
-          </div>
-          <p className="font-bold text-blue-500">ลดความเสี่ยงภาวะเรื้อรัง</p>
-        </div>
+  <div className="rounded-2xl bg-[#FFF0F0] p-6 text-center shadow-sm hover:shadow-md transition-shadow cursor-pointer"
+       onClick={() => window.location.href = '/assessment?type=9Q'}>
+    <div className="mx-auto mb-3 h-16 w-16">
+      <img src="/assets/2.png" alt="แบบประเมิน 9Q" className="h-full w-full object-contain" />
+    </div>
+    <p className="font-bold text-blue-500 mb-2">แบบประเมิน 9Q</p>
+    <p className="text-sm text-gray-600">แบบประเมินโรคซึมเศร้า 9 คำถาม</p>
+  </div>
 
-        <div className="rounded-2xl bg-[#F5F0FF] p-6 text-center shadow-sm">
-          <div className="mx-auto mb-3 h-16 w-16">
-            <img src="/assets/3.png" alt="ส่งเสริมความเข้าใจ" className="h-full w-full object-contain" />
-          </div>
-          <p className="font-bold text-purple-500">ส่งเสริมความเข้าใจ</p>
-        </div>
-      </section>
+  <div className="rounded-2xl bg-[#F5F0FF] p-6 text-center shadow-sm hover:shadow-md transition-shadow cursor-pointer"
+       onClick={() => window.location.href = '/assessment?type=8Q'}>
+    <div className="mx-auto mb-3 h-16 w-16">
+      <img src="/assets/3.png" alt="แบบประเมิน 8Q" className="h-full w-full object-contain" />
+    </div>
+    <p className="font-bold text-purple-500 mb-2">แบบประเมิน 8Q</p>
+    <p className="text-sm text-gray-600">แบบประเมินการฆ่าตัวตาย 8 คำถาม</p>
+  </div>
+</section>
+
     </div>
   );
 }
